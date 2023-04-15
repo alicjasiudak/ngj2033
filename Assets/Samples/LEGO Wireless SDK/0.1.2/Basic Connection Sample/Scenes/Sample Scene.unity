@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.63028276, g: 0.73360074, b: 0.8444327, a: 1}
+  m_IndirectSpecularColor: {r: 0.63014936, g: 0.7332839, b: 0.84417915, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -339,7 +339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hubType: 1
-  connectToSpecificHubId: BEF0EC0E-A379-16F1-998D-911187EE37AB
+  connectToSpecificHubId: 3E715A08-CD1B-E311-9779-887F18711EDB
   autoConnectOnStart: 1
   _ledColor: {r: 0, g: 1, b: 0, a: 1}
   internalServices:
