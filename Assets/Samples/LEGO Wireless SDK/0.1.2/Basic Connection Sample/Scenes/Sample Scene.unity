@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 3f4b04f0327db42c88f2cee1546c7c3e, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.5850448, g: 0.12384318, b: 0.0022385025, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -199,7 +199,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 13889559}
   m_CullTransparentMesh: 1
---- !u!1 &64668380
+--- !u!1 &153775025
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -207,49 +207,83 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 64668381}
-  - component: {fileID: 64668382}
+  - component: {fileID: 153775031}
+  - component: {fileID: 153775030}
+  - component: {fileID: 153775029}
+  - component: {fileID: 153775028}
+  - component: {fileID: 153775027}
+  - component: {fileID: 153775026}
   m_Layer: 0
-  m_Name: Tacho Motor With Absolute Position
+  m_Name: LEGO Hub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &64668381
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 64668380}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1414973524}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &64668382
+--- !u!114 &153775026
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 64668380}
+  m_GameObject: {fileID: 153775025}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe4ec8c868d624eea8a338274102f0b7, type: 3}
+  m_Script: {fileID: 11500000, guid: 146d1f43d75fa44c28c29ce4cccb9fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   IsConnectedChanged:
     m_PersistentCalls:
+      m_Calls: []
+  isInternal: 1
+  port: 96
+  TemperatureChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &153775027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153775025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 146d1f43d75fa44c28c29ce4cccb9fc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsConnectedChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  isInternal: 1
+  port: 61
+  TemperatureChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &153775028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153775025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cd908b33c43a452892fd3760ed50170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsConnectedChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  isInternal: 1
+  port: 99
+  OrientationChanged:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1054131077}
-        m_TargetAssemblyTypeName: LEGOWirelessSDK.BasicConnectionSample.TachoMotorController,
-          LEGO.WirelessSDK.Samples
-        m_MethodName: OnIsConnectedChanged
+      - m_Target: {fileID: 1054131082}
+        m_TargetAssemblyTypeName: LEGOWirelessSDK.BasicConnectionSample.TechnicHubController,
+          Assembly-CSharp
+        m_MethodName: OnOrientationChanged
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -259,17 +293,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  isInternal: 0
-  port: -1
-  typeBitMask: -1
-  virtualConn: 0
-  PositionChanged:
+--- !u!114 &153775029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153775025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 886d8b84190a64d82b3ddbb656e323f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsConnectedChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  isInternal: 1
+  port: 97
+  AccelerationChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1054131077}
-        m_TargetAssemblyTypeName: LEGOWirelessSDK.BasicConnectionSample.TachoMotorController,
-          LEGO.WirelessSDK.Samples
-        m_MethodName: OnPositionChanged
+      - m_Target: {fileID: 1054131082}
+        m_TargetAssemblyTypeName: LEGOWirelessSDK.BasicConnectionSample.TechnicHubController,
+          Assembly-CSharp
+        m_MethodName: OnAccelerationChanged
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -279,14 +326,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  SpeedChanged:
+--- !u!114 &153775030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153775025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16585a294bdd24d7e915bcfb825609cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hubType: 1
+  connectToSpecificHubId: BEF0EC0E-A379-16F1-998D-911187EE37AB
+  autoConnectOnStart: 1
+  _ledColor: {r: 0, g: 1, b: 0, a: 1}
+  internalServices:
+  - {fileID: 153775029}
+  - {fileID: 153775028}
+  - {fileID: 153775027}
+  - {fileID: 153775026}
+  externalServices:
+  - {fileID: 794190805}
+  IsConnectedChanged:
     m_PersistentCalls:
       m_Calls: []
-  PowerChanged:
+  ButtonChanged:
     m_PersistentCalls:
       m_Calls: []
-  mode: 4
-  modeWithAbsolute: 4
+--- !u!4 &153775031
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153775025}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 794190806}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &168616290
 GameObject:
   m_ObjectHideFlags: 0
@@ -893,7 +977,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2290719461712710530, guid: 7bcc97c745968443b99e0ab9b54d9c2e, type: 3}
   m_PrefabInstance: {fileID: 609775770}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &620200588
+--- !u!1 &794190804
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -901,8 +985,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 620200589}
-  - component: {fileID: 620200590}
+  - component: {fileID: 794190806}
+  - component: {fileID: 794190805}
   m_Layer: 0
   m_Name: Force Sensor
   m_TagString: Untagged
@@ -910,28 +994,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &620200589
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 620200588}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1414973524}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &620200590
+--- !u!114 &794190805
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 620200588}
+  m_GameObject: {fileID: 794190804}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 586fa312c81af45fbbd88a9ec763c702, type: 3}
@@ -939,40 +1008,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsConnectedChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1054131079}
-        m_TargetAssemblyTypeName: ForceSensorController, Assembly-CSharp
-        m_MethodName: OnIsConnectedChanged
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   isInternal: 0
   port: -1
   ForceChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1054131079}
-        m_TargetAssemblyTypeName: ForceSensorController, Assembly-CSharp
-        m_MethodName: OnForceChanged
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   TouchChanged:
     m_PersistentCalls:
       m_Calls: []
   mode: 0
+--- !u!4 &794190806
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794190804}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 153775031}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &836883552
 GameObject:
   m_ObjectHideFlags: 0
@@ -1478,107 +1538,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -165, y: -55, z: -10}
---- !u!1 &1016463528
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1016463530}
-  - component: {fileID: 1016463529}
-  m_Layer: 0
-  m_Name: Color Sensor Technic
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1016463529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1016463528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53998d3b7142841009ce93c99c02ba24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsConnectedChanged:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1054131080}
-        m_TargetAssemblyTypeName: ColorSensorController, Assembly-CSharp
-        m_MethodName: OnIsConnectedChanged
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  isInternal: 0
-  port: -1
-  IdChanged:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1054131080}
-        m_TargetAssemblyTypeName: ColorSensorController, Assembly-CSharp
-        m_MethodName: OnIdChanged
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  ColorChanged:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1054131080}
-        m_TargetAssemblyTypeName: ColorSensorController, Assembly-CSharp
-        m_MethodName: OnColorChanged
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  ReflectionChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  AmbientChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  RGBChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  mode: 0
---- !u!4 &1016463530
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1016463528}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1414973524}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1054131076
 GameObject:
   m_ObjectHideFlags: 0
@@ -1612,8 +1571,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f876bf706464bf08e1db12f2b7b8ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hub: {fileID: 1414973525}
-  tachoMotor: {fileID: 64668382}
+  hub: {fileID: 0}
+  tachoMotor: {fileID: 0}
   output: {fileID: 1808673817}
   uiHub: {fileID: 2057484935}
   uiMotorHead: {fileID: 202414107}
@@ -1630,7 +1589,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1054131079
 MonoBehaviour:
@@ -1644,8 +1603,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9907afb701e476d8e560d6b83978bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tachoMotor: {fileID: 64668382}
-  forceSensor: {fileID: 620200590}
+  tachoMotor: {fileID: 0}
+  forceSensor: {fileID: 0}
   output: {fileID: 1084305556}
   uiForceSensorButton: {fileID: 609775772}
 --- !u!114 &1054131080
@@ -1660,7 +1619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59543b97ffd26483b9e6a2c9cdbf6294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorSensor: {fileID: 1016463529}
+  colorSensor: {fileID: 0}
   output: {fileID: 1186432847}
   uiColorSensor: {fileID: 1832358144}
   colorSwatch: {fileID: 908840448}
@@ -1677,7 +1636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0ca1a90735764aebb4fdb47c30bfd5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hub: {fileID: 1414973525}
+  hub: {fileID: 0}
   output: {fileID: 443009680}
   uiHub: {fileID: 2057484927}
   uiHubButton: {fileID: 2057484934}
@@ -1700,7 +1659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 046e4e7f90e464143865be9786d56ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceSensor: {fileID: 1355051199}
+  distanceSensor: {fileID: 0}
   output: {fileID: 1472977599}
   uiDistanceSensorUpperLeftLight: {fileID: 222631418}
   uiDistanceSensorUpperRightLight: {fileID: 222631417}
@@ -2234,84 +2193,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1186432845}
   m_CullTransparentMesh: 1
---- !u!1 &1355051197
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1355051198}
-  - component: {fileID: 1355051199}
-  m_Layer: 0
-  m_Name: Distance Sensor
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1355051198
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1355051197}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1414973524}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1355051199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1355051197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9e4865220f4c43739435eba5eb8a515, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsConnectedChanged:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1054131083}
-        m_TargetAssemblyTypeName: LEGOWirelessSDK.BasicConnectionSample.DistanceSensorController,
-          LEGO.WirelessSDK.Samples
-        m_MethodName: OnIsConnectedChanged
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  isInternal: 0
-  port: -1
-  DistanceChanged:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1054131083}
-        m_TargetAssemblyTypeName: LEGOWirelessSDK.BasicConnectionSample.DistanceSensorController,
-          LEGO.WirelessSDK.Samples
-        m_MethodName: OnDistanceChanged
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1361477638
 GameObject:
   m_ObjectHideFlags: 0
@@ -2370,206 +2251,6 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!1 &1414973523
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1414973524}
-  - component: {fileID: 1414973525}
-  - component: {fileID: 1414973529}
-  - component: {fileID: 1414973528}
-  - component: {fileID: 1414973527}
-  - component: {fileID: 1414973526}
-  m_Layer: 0
-  m_Name: LEGO Hub
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1414973524
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1414973523}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 64668381}
-  - {fileID: 1355051198}
-  - {fileID: 620200589}
-  - {fileID: 1016463530}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1414973525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1414973523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16585a294bdd24d7e915bcfb825609cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hubType: 1
-  connectToSpecificHubId: 
-  autoConnectOnStart: 1
-  _ledColor: {r: 0, g: 1, b: 0, a: 1}
-  internalServices:
-  - {fileID: 1414973529}
-  - {fileID: 1414973528}
-  - {fileID: 1414973527}
-  - {fileID: 1414973526}
-  externalServices:
-  - {fileID: 64668382}
-  - {fileID: 1355051199}
-  - {fileID: 620200590}
-  - {fileID: 1016463529}
-  IsConnectedChanged:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1054131082}
-        m_TargetAssemblyTypeName: TechnicHubController, Assembly-CSharp
-        m_MethodName: OnIsConnectedChanged
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  ButtonChanged:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1054131082}
-        m_TargetAssemblyTypeName: TechnicHubController, Assembly-CSharp
-        m_MethodName: OnButtonChanged
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1414973526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1414973523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cd908b33c43a452892fd3760ed50170, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsConnectedChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  isInternal: 1
-  port: 99
-  OrientationChanged:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1054131082}
-        m_TargetAssemblyTypeName: TechnicHubController, LEGO.WirelessSDK.Samples
-        m_MethodName: OnOrientationChanged
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1414973527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1414973523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 886d8b84190a64d82b3ddbb656e323f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsConnectedChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  isInternal: 1
-  port: 97
-  AccelerationChanged:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1054131082}
-        m_TargetAssemblyTypeName: TechnicHubController, LEGO.WirelessSDK.Samples
-        m_MethodName: OnAccelerationChanged
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1414973528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1414973523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 146d1f43d75fa44c28c29ce4cccb9fc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsConnectedChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  isInternal: 1
-  port: 96
-  TemperatureChanged:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1414973529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1414973523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 146d1f43d75fa44c28c29ce4cccb9fc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsConnectedChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  isInternal: 1
-  port: 61
-  TemperatureChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1472977596
 GameObject:
   m_ObjectHideFlags: 0
@@ -3313,7 +2994,7 @@ RectTransform:
   m_Children:
   - {fileID: 1175091938}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
