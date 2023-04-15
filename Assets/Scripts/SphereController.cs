@@ -16,11 +16,21 @@ public class SphereController : MonoBehaviour
 
     void Update()
     {
-        if (!hub.IsConnected)
-            return;
-
-        
+        // if (!hub.IsConnected)
+        //     return;
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+        onKeyClick();
+        }
     }
+
+    public void onKeyClick()
+    {
+        Debug.Log("force amount");
+        //put a limit so the force can't be too high so that it doesn't fall back through the plane
+        rb.AddForce(Vector3.up * 5, ForceMode.Impulse);
+    }
+
     public void OnForceChanged(int force)
     {
         Debug.Log($"force amount: {force}");
