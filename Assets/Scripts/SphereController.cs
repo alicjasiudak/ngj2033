@@ -9,6 +9,8 @@ public class SphereController : MonoBehaviour
     public ForceSensor forceSensor;
     public HubBase hub;
 
+    bool playerReady = false;
+
     private void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody>();
@@ -16,6 +18,15 @@ public class SphereController : MonoBehaviour
 
     void Update()
     {
+        if (hub.IsConnected && !playerReady || Input.GetKeyDown(KeyCode.Space) && !playerReady)
+        {
+            playerReady = true;
+        }
+            //     return;
+
+        if (playerReady == false) { return; }
+
+        rb.AddForce(new Vector3(1,0,0));
         // if (!hub.IsConnected)
         //     return;
         if (Input.GetKeyDown(KeyCode.Space))
