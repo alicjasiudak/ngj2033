@@ -4,21 +4,27 @@ using UnityEngine;
 using LEGOWirelessSDK;
 
 public class SphereController : MonoBehaviour
-{
-    public GameObject sphere;
+{   
+    private Rigidbody rb;
     public ForceSensor forceSensor;
-    private RigidBody rigidBody;
+    public HubBase hub;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        rb = gameObject.GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (!hub.IsConnected)
+            return;
+
         
     }
-}
+    public void OnForceChanged(int force)
+    {
+        Debug.Log($"force amount: {force}");
+
+    }
+
+ }
