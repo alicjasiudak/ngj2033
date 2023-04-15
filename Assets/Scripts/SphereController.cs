@@ -24,7 +24,11 @@ public class SphereController : MonoBehaviour
     public void OnForceChanged(int force)
     {
         Debug.Log($"force amount: {force}");
+        force = force / 30;
+        //put a limit so the force can't be too high so that it doesn't fall back through the plane
+        rb.AddForce(Vector3.up * force, ForceMode.Impulse);
+
 
     }
 
- }
+}

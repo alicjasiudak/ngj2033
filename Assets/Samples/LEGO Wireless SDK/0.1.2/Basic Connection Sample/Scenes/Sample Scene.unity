@@ -1105,6 +1105,7 @@ GameObject:
   - component: {fileID: 878741081}
   - component: {fileID: 878741080}
   - component: {fileID: 878741079}
+  - component: {fileID: 878741084}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1206,6 +1207,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &878741084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878741078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e20634ee759d444a0b8b43c4bc4af202, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceSensor: {fileID: 1652863355}
+  hub: {fileID: 153775030}
 --- !u!1 &908840447
 GameObject:
   m_ObjectHideFlags: 0
@@ -1792,7 +1807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0ca1a90735764aebb4fdb47c30bfd5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hub: {fileID: 0}
+  hub: {fileID: 153775030}
   output: {fileID: 443009680}
   uiHub: {fileID: 2057484927}
   uiHubButton: {fileID: 2057484934}
@@ -3001,6 +3016,18 @@ MonoBehaviour:
   ForceChanged:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 878741084}
+        m_TargetAssemblyTypeName: SphereController, Assembly-CSharp
+        m_MethodName: OnForceChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1054131079}
         m_TargetAssemblyTypeName: LEGOWirelessSDK.BasicConnectionSample.ForceSensorController,
           Assembly-CSharp
